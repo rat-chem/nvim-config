@@ -49,6 +49,8 @@ Plug 'glepnir/dashboard-nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'andweeb/presence.nvim'
+Plug 'davidhalter/jedi-vim'
+Plug 'deoplete-plugins/deoplete-jedi'
 
 " Initialize plugin system
 call plug#end()
@@ -112,6 +114,9 @@ lua << EOF
   local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
 
   require'lspconfig'.tsserver.setup{}
+  -- require'lspconfig'.pylsp.setup{}
+  -- require'lspconfig'.pyright.setup{}
+  require'lspconfig'.jedi_language_server.setup{}
 
   require('telescope').setup{
     defaults = {
@@ -257,3 +262,6 @@ let g:airline#extensions#branch#enabled=1
 let g:airline_section_c = ''
 let g:airline_section_error = ''
 let g:airline_section_warning = ''
+
+let g:jedi#completions_enbale = 0
+let g:jedi#popup_on_dot = 0
