@@ -26,4 +26,6 @@ set termguicolors
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set colorcolumn=80
+au Filetype rust set colorcolumn=100
 filetype plugin on
